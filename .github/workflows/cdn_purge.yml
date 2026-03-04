@@ -1,0 +1,16 @@
+name: Purge jsDelivr Cache
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  refresh-cdn:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge Cache
+        run: |
+          # 使用 ${{ github.repository }} 自动获取 "用户名/仓库名"
+          # 刷新整个仓库在 main 分支下的缓存
+          curl -i https://purge.jsdelivr.net/gh/${{ github.repository }}@main/

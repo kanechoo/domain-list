@@ -1,2 +1,3 @@
 payload:
   - '+.prestige-av.com'
+  - '+.mgstage.com'
